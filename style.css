@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+:root {
+  --dark-cyan: hsl(185, 75%, 39%);
+  --very-dark-desaturated-blue: hsl(229, 23%, 23%);
+  --dark-grayish-blue: hsl(227, 10%, 46%);
+  --dark-gray: hsl(0, 0%, 59%);
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 18px;
+  height: 100vh;
+  background-color: var(--dark-cyan);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: var(--very-dark-desaturated-blue);
+  position: relative;
+  overflow: hidden;
+}
+body::before {
+  content: "";
+  background-image: url(./images/bg-pattern-top.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 978px;
+  width: 978px;
+  position: absolute;
+  top: -70vh;
+  left: -15vw;
+  z-index: -1;
+}
+body::after {
+  content: "";
+  background-image: url(./images/bg-pattern-bottom.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 978px;
+  width: 978px;
+  position: absolute;
+  bottom: -80vh;
+  right: -15vw;
+  z-index: -1;
+}
+.attribution {
+  position: fixed;
+  bottom: -20px;
+}
+.profile-card {
+  width: 360px;
+  height: auto;
+  background: #fff url(./images/bg-pattern-card.svg) no-repeat;
+  background-size: 100%;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+}
+.profile-header {
+  margin: 91px 0 25px;
+}
+.profile-header img {
+  border-radius: 50%;
+  border: 5px solid #fff;
+  height: 110px;
+  width: 110px;
+  margin-bottom: 15px;
+}
+.profile-header .age,
+.profile-header .location,
+.stat-item .stat-label {
+  color: var(--dark-grayish-blue);
+}
+.profile-header p {
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+.profile-header .age {
+  font-weight: 400;
+  margin-left: 5px;
+}
+.profile-header .location {
+  font-size: 15px;
+}
+/* Profile Stats */
+.profile-stats {
+  padding: 26px 48px 25px;
+  border-top: 1px solid #e7e7e7;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 17px;
+}
+.profile-stats .stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.stat-item .stat-value {
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+.stat-item .stat-label {
+  font-size: 11px;
+}
+
+@media (max-width: 375px) {
+  body::before {
+    top: -90vh;
+    left: -200vw;
+  }
+  body::after {
+    bottom: -90vh;
+    right: -200vw;
+  }
+  .profile-card {
+    width: 325px;
+  }
+}
